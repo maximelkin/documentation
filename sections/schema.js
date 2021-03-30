@@ -143,7 +143,7 @@ export default [
       {
         type: "runnable",
         content: `
-            const ddlCommands = knex.schema.alterTable(
+            knex.schema.alterTable(
               'users',
               (table) => {
                 table
@@ -151,7 +151,7 @@ export default [
                   .references('company.companyId')
                   .withKeyName('fk_fkey_company');
               }
-            ).generateDdlCommands();
+            ).generateDdlCommands()
         `
       }
     ]
